@@ -1,0 +1,149 @@
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&display=swap");
+@import "tailwindcss";
+* {
+  font-family: "Orbitron", sans-serif;
+}
+::-webkit-scrollbar {
+  display: none;
+}
+@theme {
+  --color-primary: #c9ab75;
+}
+
+/* global.css or Add inside a <style> tag in your layout */
+.ql-editor {
+  background-color: transparent !important;
+  color: #f8f8f8 !important; /* or your primary text color */
+  font-family: "Orbitron", sans-serif !important;
+  font-size: 14px;
+  line-height: 1.75;
+  padding: 1rem;
+}
+
+.ql-toolbar {
+  background-color: rgba(255, 255, 255, 0.05) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  font-family: "Orbitron", sans-serif !important;
+}
+
+.ql-container.ql-snow {
+  background-color: #000;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+
+.rich-text {
+  font-size: 15px;
+  font-family: "Space Grotesk", "sans-serif";
+  color: #cbd5e1; /* slate-300 */
+  line-height: 1.7;
+}
+
+/* Paragraphs */
+.rich-text p {
+  margin-bottom: 1rem;
+  color: #cbd5e1; /* soft lunar white */
+}
+
+/* Headings */
+.rich-text h1 {
+  font-size: 2.25rem; /* 36px */
+  font-family: "Orbitron", sans-serif;
+  font-weight: 700;
+  color: #f1f5f9 !important; /* slate-100 */
+  margin: 2rem 0;
+  text-shadow: 0 0 6px rgba(255, 255, 255, 0.15);
+}
+
+.rich-text h2 {
+  font-size: 1.5rem; /* 24px */
+  font-family: "Orbitron", sans-serif;
+  font-weight: 600;
+  color: #e2e8f0 !important; /* slate-200 */
+  margin: 1.5rem 0;
+}
+
+.rich-text h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #cbd5e1 !important;
+  margin: 1.25rem 0;
+}
+
+.rich-text h4 {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #94a3b8 !important; /* slate-400 */
+  margin: 1rem 0;
+}
+
+.rich-text h5 {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #64748b !important; /* slate-500 */
+  margin: 0.75rem 0;
+}
+
+.rich-text h6 {
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: #475569 !important; /* slate-600 */
+  margin: 0.5rem 0;
+}
+
+/* Strong text */
+.rich-text strong {
+  font-weight: 700;
+  color: #facc15; /* yellow-400 */
+}
+
+/* Lists */
+.rich-text ol,
+.rich-text ul {
+  margin-left: 1.5rem;
+  padding-left: 1rem;
+}
+
+.rich-text ol {
+  list-style-type: decimal;
+}
+
+.rich-text ul {
+  list-style-type: disc;
+}
+
+.rich-text li {
+  margin-bottom: 0.5rem;
+}
+
+/* Links */
+.rich-text a {
+  color: #38bdf8; /* sky-400 */
+  text-decoration: underline;
+  transition: color 0.2s ease;
+}
+
+.rich-text a:hover {
+  color: #facc15; /* yellow-400 */
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -50;
+
+  background-image: radial-gradient(
+      at 50% 20%,
+      rgba(201, 171, 117, 0.28) 0%,
+      transparent 60%
+    ),
+    radial-gradient(at 80% 80%, rgba(120, 90, 255, 0.15) 0%, transparent 70%);
+  background-color: #0a0a0f; /* optional dark base */
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  opacity: 1;
+  pointer-events: none;
+}
