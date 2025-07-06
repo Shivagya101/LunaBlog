@@ -5,9 +5,12 @@
 dist/
 build/
 
-# Environment variables
+# Ignore all .env files
 .env
 .env.*
+client/.env
+server/.env
+
 
 # Logs & system files
 npm-debug.log*
