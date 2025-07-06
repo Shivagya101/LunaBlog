@@ -10,7 +10,7 @@ await connectDB();
 // Middleware
 const allowedOrigins = [
   "http://localhost:5173",
-  "https://lunablog.vercel.app", // ← update to your actual frontend domain
+  "https://luna-blog-nine.vercel.app",
 ];
 
 app.use(
