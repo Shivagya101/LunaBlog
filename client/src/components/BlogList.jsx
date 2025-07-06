@@ -21,44 +21,26 @@ const BlogList = () => {
   };
   return (
     <div>
-      {/* --- Category Bar: 3-per-row grid on phones, flex ribbon ≥ sm --- */}
-<div
-  className="
-    grid grid-cols-3           /* 3 items per row on phones  */
-    gap-4                      /* spacing in grid            */
-    justify-items-center       /* center each cell           */
-    sm:flex sm:flex-wrap       /* ≥sm: switch back to flex   */
-    sm:justify-center
-    sm:gap-8
-    my-10 px-4 sm:px-0
-  "
->
-  {blogCategories.map(item => (
+      <div className="flex flex-wrap justify-center gap-3 sm:gap-4 my-10 px-4 sm:px-0">
+  {blogCategories.map((item) => (
     <button
       key={item}
       onClick={() => setMenu(item)}
       className={`
-        relative w-full          /* full-width inside grid cell */
         px-5 py-2 rounded-full
-        border border-white/20 backdrop-blur-md
-        font-orbitron text-sm tracking-wide text-center
+        border border-white/20
+        backdrop-blur-md
+        font-orbitron text-sm tracking-wide
         transition-all hover:scale-105 hover:border-primary
+        whitespace-nowrap
         ${
           menu === item
             ? "bg-primary text-silver"
-            : "bg-white/5 text-white"
+            : "text-white bg-white/5"
         }
       `}
     >
       {item}
-
-      {menu === item && (
-        <motion.div
-          layoutId="underline"
-          transition={{ type: "spring", stiffness: 500, damping: 30 }}
-          className="absolute inset-0 -z-10 bg-primary rounded-full"
-        />
-      )}
     </button>
   ))}
 </div>
