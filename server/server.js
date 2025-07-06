@@ -8,7 +8,24 @@ import blogRouter from "./routes/blogRoutes.js";
 const app = express();
 await connectDB();
 // Middleware
-app.use(cors());
+const allowedOrigins = [
+  "http://localhost:5173",
+  "https://lunablog.vercel.app", // ← update to your actual frontend domain
+];
+
+app.use(
+  cors({
+    origin: (origin, callback) => {
+      // allow requests with no origin (e.g., Postman) or whitelisted
+      if (!origin || allowedOrigins.includes(origin)) {
+        return callback(null, true);
+      }
+      return callback(new Error("Not allowed by CORS"));
+    },
+    credentials: true, // if you plan to use cookies or auth headers
+  })
+);
+
 app.use(express.json());
 
 // Routes
@@ -16,7 +33,7 @@ app.get("/", (req, res) => {
   res.send("Welcome to the API!");
 });
 app.use("/api/admin", adminRouter);
-app.use('/api/blog', blogRouter);
+app.use("/api/blog", blogRouter);
 const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {
