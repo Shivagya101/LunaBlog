@@ -35,7 +35,9 @@ const Navbar = () => {
           <img src={assets.arrow} alt="arrow" className="w-3" />
         </button>
       </div>
-
+      <div className="mt-4 text-xs sm:text-sm text-yellow-100/50 font-orbitron tracking-wide italic">
+        ✧ Transmission courtesy of Shivagya ✧
+      </div>
       {/* Tranquility tagline */}
       <div className="mt-2 px-6 py-1 rounded-full text-xs sm:text-sm font-orbitron tracking-widest text-yellow-300 bg-white/5 backdrop-blur-sm border border-yellow-300/30 shadow-md">
         ✦ Live from the Information-Action Ratio Terminal ✦
